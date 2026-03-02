@@ -1,0 +1,42 @@
+services:
+  # Backend API Service
+  - type: web
+    name: sandwichpodcast-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci && npm rebuild
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    # Environment variables from your .env file should be added via Render dashboard
+
+  # Frontend Web Service  
+  - type: web
+    name: sandwichpodcast-frontend
+    runtime: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    publishPath: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+        
+  # Admin Panel Web Service
+  - type: web
+    name: sandwichpodcast-admin
+    runtime: node
+    plan: free
+    rootDir: admin
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview  
+    publishPath: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
