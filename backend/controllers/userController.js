@@ -41,6 +41,14 @@ const getUserProfile = async (req, res) => {
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+
+        if (email === process.env.ADMIN_EMAIL) {
+            return res.json({
+                success: false,
+                message: "Admin account detected. Please log in from the admin panel."
+            });
+        }
+
         const user = await userModel.findOne({ email });
 
         if (!user) {
