@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { backendUrl } from '../App';
+import { backendUrl } from '../config';
 import { toast } from 'react-toastify';
 import { ButtonLoading } from './Loading';
 import PropTypes from 'prop-types';

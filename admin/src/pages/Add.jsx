@@ -1,7 +1,7 @@
 import { assets } from '../assets/assets'
 import  { useState } from 'react'
 import axios from 'axios'
-import { backendUrl } from '../App'
+import { backendUrl } from '../config'
 import { toast } from 'react-toastify'
 import PropTypes from 'prop-types'
 import { ButtonLoading } from '../components/Loading'

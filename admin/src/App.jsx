@@ -8,9 +8,7 @@ import { useEffect, useState } from 'react'
 import Login from './components/Login'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
-export const backendUrl = import.meta.env.VITE_BACKEND_URL
-export const currency = 'Ksh '
+import VisualSearch from './pages/VisualSearch'
 
 const App = () => {
 
@@ -38,6 +36,7 @@ return (
             <Route path="/Add" element={<Add token={token} />} />
             <Route path="/List" element={<List token={token}/>} />
             <Route path="/Orders" element={<Orders token={token}/>} />
+            <Route path="/VisualSearch" element={<VisualSearch />} />
           </Routes>
         </div>
       </div>
