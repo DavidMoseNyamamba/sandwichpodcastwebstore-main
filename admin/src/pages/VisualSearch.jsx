@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { backendUrl } from '../config';
 // Import an upload icon similar to the ones you use in your Add Items page
 // import { upload_icon } from '../assets'; 
 
@@ -19,7 +20,7 @@ const VisualSearch = () => {
 
     try {
       // Replace with your actual backend endpoint
-      const response = await fetch('http://localhost:4000/api/product/visual-search', {
+      const response = await fetch(`${backendUrl}/api/product/visual-search`, {
         method: 'POST',
         body: formData,
       });
